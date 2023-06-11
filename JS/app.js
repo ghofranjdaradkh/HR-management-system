@@ -40,7 +40,7 @@ generateRandomNum = function (min, max) {
     this.salary = Math.floor(Sal -(Sal*.075) )
  }
  else { let Sal=generateRandomNum(500,1000)
-    this.salary =Math.floor (Sal -(Sal*.075))}}
+    this.salary =Math.floor(Sal -(Sal*.075))}}
   
 
 
