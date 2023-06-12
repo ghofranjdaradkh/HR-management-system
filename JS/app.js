@@ -1,5 +1,9 @@
 `use strict`
-const allEmployee = [];
+let allEmployee = [];
+let counterID = 999
+let secEle = document.getElementById("secTag");
+let submitBot = document.getElementById("submit");
+
 function Employee(id, names, department, level, img) {
   this.employeeID = id;
   this.fullName = names;
@@ -9,48 +13,63 @@ function Employee(id, names, department, level, img) {
   this.salary = 0;
   allEmployee.push(this);
 }
-Employee.prototype.Department = function () {
-  this.Department = [Administration, Marketing, Development, Finance]
-}
-
-
 
 Employee.prototype.renderEmployee = function () {
+  var card = document.createElement("div");
+  card.className = "employeeCard";
+  secEle.appendChild(card);
+  const employeeImg = document.createElement('img');
+  employeeImg.src = this.imageURL;
+  card.appendChild(employeeImg);
+  employeeImg.className = "Images";
 
-    document.write(`<table> 
-       <tr> <th> EmployeeID </th>  <th>Name </th><th>Department</th><th>Level</th>  </tr>
- <tr> <td>${this.employeeID}</td>  &ensp;<td>${this.fullName}</td> <td>${this.Department}</td> <td>${this.Level}</td> </tr> </table>`)
-    document.write(`<p> salary= ${this.salary}</p>`);
-  }
+  const employeeName = document.createElement('h3');
+  employeeName.textContent = `Name :${this.fullName}  - ID:${this.employeeID}`;
+  card.appendChild(employeeName);
+  employeeName.className = "Name";
+
+  const employeedep = document.createElement('h3');
+  employeedep.textContent = `Department:${this.Department} - Level: ${this.Level}`;
+  card.appendChild(employeedep);
+  employeedep.className = "depatrment";
+
+  const employeesal = document.createElement('h3');
+  employeesal.textContent = `${this.salary}`;
+  card.appendChild(employeesal);
+  employeesal.className = "salary";
+};
+
 
 generateRandomNum = function (min, max) {
   salary = Math.floor(Math.random() * (max - min + 1) + min);
   return salary
 }
 
+Employee.prototype.netSalary = function () {
+  if (this.Level == "Senior") {
+    let Sal = generateRandomNum(1500, 2000)
+    this.salary = Math.floor(Sal - (Sal * .075))
 
- Employee.prototype.netSalary=function( ){
-  if (this.Level=="Senior"){
-    let Sal=generateRandomNum(1500,2000)
-    this.salary = Math.floor(Sal -(Sal*.075))
-      
   }
-  else if (this.Level=="Mid-Senior"){
-    let Sal=generateRandomNum(1000,1500)
-    this.salary = Math.floor(Sal -(Sal*.075) )
- }
- else { let Sal=generateRandomNum(500,1000)
-    this.salary =Math.floor(Sal -(Sal*.075))}}
-  
+  else if (this.Level == "Mid-Senior") {
+    let Sal = generateRandomNum(1000, 1500)
+    this.salary = Math.floor(Sal - (Sal * .075))
+  }
+  else {
+    let Sal = generateRandomNum(500, 1000)
+    this.salary = Math.floor(Sal - (Sal * .075))
+  }
+}
 
 
-let Employee1 = new Employee(1000, "Ghazi Samer", "Administration", "Senior", "https://www.shareicon.net/data/2016/08/18/813781_man_512x512.png", 0);
-let Employee2 = new Employee(1001, "Lana Ali", "Administration", "Senior", "https://i.pinimg.com/564x/a6/58/32/a65832155622ac173337874f02b218fb--people-icon-avatar.jpg");
-let Employee3 = new Employee(1002, "Tamara Ayoub", "Marketing", "Senior", "https://png.pngtree.com/element_our/png/20181206/female-avatar-vector-icon-png_262142.jpg");
-let Employee4 = new Employee(1003, "Safi Walid", "Administration", "Mid-Senior", "https://i.pinimg.com/474x/60/b4/7e/60b47e2dfdbe3f0e2adf74129fbea3b0.jpg");
-let Employee5 = new Employee(1004, "Omar Zaid", "Development", "Senior", "https://img.freepik.com/free-icon/professor_318-191762.jpg?w=2000");
-let Employee6 = new Employee(1005, "Rana Saleh", "Development", "Junior", "https://img.freepik.com/free-icon/professor_318-191762.jpg?w=2000");
-let Employee7 = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjRzkEEVtiPqqpsIeWxJzt-6pieZh0gl5wWncL3yQA1XDIZKWtEcYwAvp5qwbMnDWOAQI&usqp=CAU")
+
+let Employee1 = new Employee(0, "Ghazi Samer", "Administration", "Senior", "assets/ghazi.png");
+let Employee2 = new Employee(0, "Lana Ali", "Administration", "Senior", "assets/lana.jpg");
+let Employee3 = new Employee(0, "Tamara Ayoub", "Marketing", "Senior", "assets/tamara.jpg");
+let Employee4 = new Employee(0, "Safi Walid", "Administration", "Mid-Senior", "assets/safi.jpg");
+let Employee5 = new Employee(0, "Omar Zaid", "Development", "Senior", "assets/omar.png");
+let Employee6 = new Employee(0, "Rana Saleh", "Development", "Junior", "assets/rana.png");
+let Employee7 = new Employee(0, "Hadi Ahmad", "Finance", "Mid-Senior", "assets/hadi.png");
 
 console.log(Employee1);
 console.log(Employee2);
@@ -61,9 +80,45 @@ console.log(Employee6);
 console.log(Employee7);
 console.log(allEmployee);
 
+
+generateUniqueID = function (counterID) {
+  for (let i = 0; i < allEmployee.length; i++) {
+    counterID++
+    allEmployee[i].employeeID = counterID;
+  }
+}
+
 for (let i = 0; i < allEmployee.length; i++) {
+  generateUniqueID(counterID);
   allEmployee[i].netSalary();
-allEmployee[i].renderEmployee();}
+  allEmployee[i].renderEmployee();
+
+}
+
+function addNewEmployee(event) {
+  event.preventDefault();
+
+  var newID =generateUniqueID() ;
+  let newName = event.target.fullName.value;
+  let department = event.target.Department.value;
+  let level = event.target.Level.value;
+  let newImg = event.target.imageUrl.value;
+  let newEmployee = new Employee(newID,newName, department, level, newImg,salary);
+  newEmployee.netSalary();
+  newEmployee.renderEmployee();
+  alert("Welcome , a new employee has been added");
+  submitBot.style.backgroundColor="yellow"
+}
+
+let employeesForm = document.getElementById("employeesForm");
+employeesForm.addEventListener("submit", addNewEmployee);
 
 
-  
+
+
+
+
+
+
+
+

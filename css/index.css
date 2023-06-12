@@ -1,54 +1,205 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&family=Kaushan+Script&family=Rubik+Wet+Paint&display=swap');
+
+body {
     background: url(https://media.licdn.com/dms/image/C4E1BAQGCIjFgb9sUig/company-background_10000/0/1549490410483?e=1686848400&v=beta&t=7RJh3uR6js55rBClMhbEjv9EYOEiKx9ibMp5cc1a3Ko);
-    background-size: cover;
+    background-size: 100% 100%;
 }
-.head{
+
+.head {
     display: flex;
-    
+
 }
-#logo{
+
+#logo {  margin: 10px;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
 }
-.navigation{ display: flex;
- position: absolute;
- right: 0;
-gap: 40px;
-margin-top: 10px;
-margin-right: 600px;
-font-size: 29px; 
+
+.navigation {
+    
+    display: flex;
+    position: absolute;
+    right: 0;
+    gap: 80px;
+    margin-top: 10px;
+    margin-right: 400px;
+    font-size: 29px;
+    font-family: 'Caveat', cursive;
+    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Kalam', cursive;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Rubik Wet Paint', cursive;
+    font-family: 'Slabo 27px', serif;
 
 }
 
-a{
+a {text-decoration: none;
     color: rgb(26, 26, 145);
 }
-a:hover{ font-size: 35px;
-    color:yellow;
 
- }
+a:hover {
+   
+    font-size: 35px;
+    color: yellow;
+
+}
 
 
-.footer{ display: flex;
+.footer {
+    display: flex;
     background-color: rgb(26, 26, 145);
-    width: 100%; 
-    height: 40px; display:flex;
-justify-content: end;
-align-items: center;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 
-position: absolute;  
-bottom: 0;
-   gap: 15px;}
+    position: relative;
+    bottom: 0;
+    gap: 15px;
+}
 
 
-.copyright{
+.copyright {
     font-size: 20px;
     color: white;
     align-items: center
-   
 }
-.hr{ padding: 20px;
+
+.hr {
+    padding: 20px;
     color: rgb(26, 26, 145);
     font-size: 80px;
+}
+
+#employeesForm {
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+color: rgb(9, 9, 143);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 23px;
+    gap: 20px;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    float: right;
+    background-color: #6DA9E4;
+    border-radius: 5%;
+    padding: 10px;
+    border: 10px solid #283ae0;
+
+
+}#employeesForm input{
+
+  margin-left: 20px;}
+
+  
+
+input { background-color:rgb(208, 208, 250);
+    margin-left: 10px;
+
+}
+
+#submit {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 250px;
+    width: 100px;
+    font-size: medium;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+#fullName {
+    width: 200px;
+
+}
+
+#Department {background-color:rgb(208, 208, 250);
+    width: 200px;
+}
+
+#Level {background-color:rgb(208, 208, 250);
+    margin-left: 75px;
+    gap: 0px;
+    width: 200px;
+}
+
+#imageUrl {
+    width: 200px;
+}
+
+#secTag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    gap: 10px;
+    padding-top: 200px;
+    padding-bottom: 500px;
+    border-color: brown;
+}
+
+
+
+
+.Images {margin-top: 5px;
+    border-radius: 50%;
+    width: 150px;
+    margin-left: 90px;
+}
+
+.Name {
+    font-size: medium;
+    margin-top: 10px;
+    padding-left: 25px;
+
+}
+
+
+.depatrment {
+    font-size: medium;
+    margin-top: 10px;
+    padding-left: 15px;
+
+}
+
+section {
+    border-color: brown;
+}
+
+.salary {
+    display: flex;
+    margin-left: 130px;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.employeeCard {
+   
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    background-color: #11009E;
+    width: 380px;
+    border: 10px;
+    border-color: blue;
+    box-shadow: blue;
+    border-radius: 5%;
+    font-weight: inherit;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px solid #a1c4e0;
+}
+
+.employeeCard:hover {
+    font-size: larger;
+}
+#HR{
+    width: 900px;
+    height: 280px;
 }
