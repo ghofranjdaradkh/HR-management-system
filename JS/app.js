@@ -84,38 +84,68 @@ console.log(allEmployee);
 generateUniqueID = function (counterID) {
   for (let i = 0; i < allEmployee.length; i++) {
     counterID++
+ 
     allEmployee[i].employeeID = counterID;
+
   }
 }
-
-for (let i = 0; i < allEmployee.length; i++) {
+function renderAll() {
+  for (let i = 0; i < allEmployee.length; i++) {
   generateUniqueID(counterID);
   allEmployee[i].netSalary();
   allEmployee[i].renderEmployee();
+  
+}}
 
-}
+
+  
 
 function addNewEmployee(event) {
   event.preventDefault();
 
-  var newID =generateUniqueID() ;
+  let newID = this.employeeID;
   let newName = event.target.fullName.value;
   let department = event.target.Department.value;
   let level = event.target.Level.value;
   let newImg = event.target.imageUrl.value;
-  let newEmployee = new Employee(newID,newName, department, level, newImg,salary);
+  let newEmployee = new Employee(newID, newName, department, level, newImg, salary);
+  
   newEmployee.netSalary();
   newEmployee.renderEmployee();
   alert("Welcome , a new employee has been added");
-  submitBot.style.backgroundColor="yellow"
+  submitBot.style.backgroundColor = "yellow";
+  //  console.log(newEmployee)
+  saveData(allEmployee);
+
 }
 
 let employeesForm = document.getElementById("employeesForm");
 employeesForm.addEventListener("submit", addNewEmployee);
 
 
+//local storage code:
+function saveData(arr) {
+  let stringArr = JSON.stringify(arr);
+  localStorage.setItem('employees', stringArr);
+
+}
 
 
+function getData() {
+  let retrieveArr = localStorage.getItem('employees');
+  var objArr = JSON.parse(retrieveArr);
+  // Employee.allEmployee = objArr
+  console.log(objArr)
+
+}
+
+// getData();
+
+
+// for (let i = 0; i < objArr.length; i++) {
+//     newEmployee(objArr[i].id, objArr[i].names, objArr[i].department, objArr[i].level, objArr[i].img)
+
+renderAll();
 
 
 
