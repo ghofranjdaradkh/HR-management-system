@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&family=Kaushan+Script&family=Rubik+Wet+Paint&display=swap');
 
 body {
-    background: url(https://media.licdn.com/dms/image/C4E1BAQGCIjFgb9sUig/company-background_10000/0/1549490410483?e=1686848400&v=beta&t=7RJh3uR6js55rBClMhbEjv9EYOEiKx9ibMp5cc1a3Ko);
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-full-hand-painted-blue-watercolor-background-paintedwatercolorbackgroundfreshgouachelight-bluebloom-image_81938.jpg);
     background-size: 100% 100%;
 }
 
@@ -10,14 +10,15 @@ body {
 
 }
 
-#logo {  margin: 10px;
+#logo {
+    margin: 10px;
     border-radius: 50%;
     width: 180px;
     height: 180px;
 }
 
 .navigation {
-    
+
     display: flex;
     position: absolute;
     right: 0;
@@ -31,15 +32,19 @@ body {
     font-family: 'Kaushan Script', cursive;
     font-family: 'Rubik Wet Paint', cursive;
     font-family: 'Slabo 27px', serif;
+    text-decoration: none;
 
 }
 
-a {text-decoration: none;
+a {
+    text-decoration: none;
     color: rgb(26, 26, 145);
+
 }
 
 a:hover {
-   
+    text-decoration: none;
+
     font-size: 35px;
     color: yellow;
 
@@ -71,6 +76,7 @@ a:hover {
     padding: 20px;
     color: rgb(26, 26, 145);
     font-size: 80px;
+
 }
 
 #employeesForm {
@@ -78,7 +84,7 @@ a:hover {
     left: 0px;
     display: flex;
     flex-direction: column;
-color: rgb(9, 9, 143);
+    color: rgb(9, 9, 143);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 23px;
     gap: 20px;
@@ -92,13 +98,17 @@ color: rgb(9, 9, 143);
     border: 10px solid #283ae0;
 
 
-}#employeesForm input{
+}
 
-  margin-left: 20px;}
+#employeesForm input {
 
-  
+    margin-left: 20px;
+}
 
-input { background-color:rgb(208, 208, 250);
+
+
+input {
+    background-color: rgb(208, 208, 250);
     margin-left: 10px;
 
 }
@@ -118,11 +128,13 @@ input { background-color:rgb(208, 208, 250);
 
 }
 
-#Department {background-color:rgb(208, 208, 250);
+#Department {
+    background-color: rgb(208, 208, 250);
     width: 200px;
 }
 
-#Level {background-color:rgb(208, 208, 250);
+#Level {
+    background-color: rgb(208, 208, 250);
     margin-left: 75px;
     gap: 0px;
     width: 200px;
@@ -147,7 +159,8 @@ input { background-color:rgb(208, 208, 250);
 
 
 
-.Images {margin-top: 5px;
+.Images {
+    margin-top: 5px;
     border-radius: 50%;
     width: 150px;
     margin-left: 90px;
@@ -180,7 +193,7 @@ section {
 }
 
 .employeeCard {
-   
+
     display: flex;
     flex-direction: column;
     flex-flow: row wrap;
@@ -199,7 +212,8 @@ section {
 .employeeCard:hover {
     font-size: larger;
 }
-#HR{
+
+#HR {
     width: 900px;
     height: 280px;
 }
