@@ -22,24 +22,24 @@ function getData() {
     for (let i = 0; i < objArr.length; i++) {
         if (objArr[i].Department === "Administration") {
             numEmployees1 += 1;
-            avgSal += objArr[i].salary;
-            totalSal1 = avgSal / numEmployees1;
+            totalSal1 += objArr[i].salary;
+            avgSal = Math.floor( totalSal1/ numEmployees1);
         } else if (objArr[i].Department === "Marketing") {
             numEmployees2 += 1;
-            avgSal2 += objArr[i].salary;
-            totalSal2 = avgSal2 / numEmployees2;
+            totalSal2 += objArr[i].salary;
+            avgSal2 = Math.floor( totalSal2 / numEmployees2);
         } else if (objArr[i].Department === "Development") {
             numEmployees3 += 1;
-            avgSal3 += objArr[i].salary;
-            totalSal3 = avgSal3 / numEmployees3;
+            totalSal3+= objArr[i].salary;
+            avgSal3 =Math.floor( totalSal3  / numEmployees3);
         } else {
             numEmployees4 += 1;
-            avgSal4 += objArr[i].salary;
-            totalSal4 = avgSal4 / numEmployees4;
+            totalSal4+= objArr[i].salary;
+              avgSal4=Math.floor(totalSal4 / numEmployees4);
         }
         counter = counter + 1;
-        avgSalary = avgSal + avgSal2 + avgSal3 + avgSal4
-        total = avgSalary / counter
+        total =totalSal1+totalSal2+totalSal3+totalSal4
+        avgSalary = Math.floor(total / counter)
     }
 
 
@@ -65,12 +65,12 @@ let renderTable = function () {
     td2E1.style.border = "6px double green";
 
     let td3E1 = document.createElement("td");
-    td3E1.textContent = avgSal
+    td3E1.textContent =totalSal1   
     trE1.appendChild(td3E1);
     td3E1.style.border = "6px double green";
 
     let td4E1 = document.createElement("td");
-    td4E1.textContent = totalSal1;
+    td4E1.textContent = avgSal;
     trE1.appendChild(td4E1);
     td4E1.style.border = "6px double green";
 
@@ -90,12 +90,12 @@ let renderTable = function () {
     td2E2.style.border = "6px double green"
 
     let td3E2 = document.createElement("td");
-    td3E2.textContent = avgSal2;
+    td3E2.textContent = totalSal2;
     tr2E1.appendChild(td3E2);
     td3E2.style.border = "6px double green"
 
     let td4E2 = document.createElement("td");
-    td4E2.textContent = totalSal2;
+    td4E2.textContent =avgSal2 ;
     tr2E1.appendChild(td4E2);
     td4E2.style.border = "6px double green"
 
@@ -115,12 +115,12 @@ let renderTable = function () {
     td2E3.style.border = "6px double green"
 
     let td3E3 = document.createElement("td");
-    td3E3.textContent = avgSal3;
+    td3E3.textContent = totalSal3;
     tr3E1.appendChild(td3E3);
     td3E3.style.border = "6px double green"
 
     let td4E3 = document.createElement("td");
-    td4E3.textContent = totalSal3;
+    td4E3.textContent =avgSal3;   
     tr3E1.appendChild(td4E3);
     td4E3.style.border = "6px double green"
 
@@ -140,12 +140,12 @@ let renderTable = function () {
     td2E4.style.border = "6px double green"
 
     let td3E4 = document.createElement("td");
-    td3E4.textContent = avgSal4;
+    td3E4.textContent =totalSal4 ;
     tr4E1.appendChild(td3E4);
     td3E4.style.border = "6px double green"
 
     let td4E4 = document.createElement("td");
-    td4E4.textContent = totalSal4;
+    td4E4.textContent =avgSal4 ;
     tr4E1.appendChild(td4E4);
     td4E4.style.border = "6px double green"
 
@@ -166,12 +166,12 @@ let renderTable = function () {
     td2E5.style.border = "6px double green"
 
     let td3E5 = document.createElement("td");
-    td3E5.textContent = avgSalary;
+    td3E5.textContent = total;
     tr5E1.appendChild(td3E5);
     td3E5.style.border = "6px double green"
 
     let td4E5 = document.createElement("td");
-    td4E5.textContent = total;
+    td4E5.textContent =avgSalary;
     tr5E1.appendChild(td4E5);
     td4E5.style.border = "6px double green"
 
