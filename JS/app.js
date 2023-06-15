@@ -62,23 +62,6 @@ Employee.prototype.netSalary = function () {
 }
 
 
-
-// let Employee1 = new Employee(0, "Ghazi Samer", "Administration", "Senior", "assets/ghazi.png");
-
-// let Employee2 = new Employee(0, "Lana Ali", "Administration", "Senior", "assets/lana.jpg");
-// let Employee3 = new Employee(0, "Tamara Ayoub", "Marketing", "Senior", "assets/tamara.jpg");
-// let Employee4 = new Employee(0, "Safi Walid", "Administration", "Mid-Senior", "assets/safi.jpg");
-// let Employee5 = new Employee(0, "Omar Zaid", "Development", "Senior", "assets/omar.png");
-// let Employee6 = new Employee(0, "Rana Saleh", "Development", "Junior", "assets/rana.png");
-// let Employee7 = new Employee(0, "Hadi Ahmad", "Finance", "Mid-Senior", "assets/hadi.png");
-
-// console.log(Employee1);
-// console.log(Employee2);
-// console.log(Employee3);
-// console.log(Employee4);
-// console.log(Employee5);
-// console.log(Employee6);
-// console.log(Employee7);
 console.log(allEmployee);
 
 
@@ -92,8 +75,7 @@ generateUniqueID = function (counterID) {
 }
 function renderAll() {
   for (let i = 0; i < allEmployee.length; i++) {
-   // generateUniqueID(counterID);
-   // allEmployee[i].netSalary();
+
     allEmployee[i].renderEmployee();
 
   }
@@ -110,13 +92,13 @@ function addNewEmployee(event) {
   let department = event.target.Department.value;
   let level = event.target.Level.value;
   let newImg = event.target.imageUrl.value;
-  let newEmployee = new Employee(newID, newName, department, level, newImg );
+  let newEmployee = new Employee(newID, newName, department, level, newImg);
   generateUniqueID(counterID)
   newEmployee.netSalary();
   newEmployee.renderEmployee();
   alert("Welcome , a new employee has been added");
   submitBot.style.backgroundColor = "yellow";
-  //  console.log(newEmployee)
+
   saveData(allEmployee);
 
 }
@@ -139,19 +121,14 @@ function getData() {
   if (objArr !== null) {
     // allEmployee = objArr
     for (let i = 0; i < objArr.length; i++) {
-  //     this.employeeID = id;
-  // this.fullName = names;
-  // this.Department = department;
-  // this.Level = level;
-  // this.imageURL = img;
-  // this.salary = 0;
-     let emp =  new Employee(objArr[i].employeeID, objArr[i].fullName, objArr[i].Department, objArr[i].Level, objArr[i].imageURL);
+
+      let emp = new Employee(objArr[i].employeeID, objArr[i].fullName, objArr[i].Department, objArr[i].Level, objArr[i].imageURL);
       emp.salary = objArr[i].salary;
     }
 
 
 
-   
+
   }
 
   renderAll();
